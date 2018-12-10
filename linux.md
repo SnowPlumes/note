@@ -171,3 +171,16 @@ wget http://dl.lancdn.com/landian/tools/serverspeeder.sh && bash serverspeeder.s
 > **firewall-cmd --permanent --zone=public --add-port=${port}/udp**<br>
 . **firewall-cmd --reload**<br>
 - 开放的端口位于 **/etc/sysconfig/iptables** 中
+
+### 设置
+- 操作系统默认 240 秒后，才会关闭处于 time_wait 状态的连接，在高并发访问下，服
+务器端会因为处于 time_wait 的连接数太多，可能无法建立新的连接，所以需要在服务器上
+调小此等待值。
+> 在 linux 服务器上请通过变更 /etc/sysctl.conf 文件去修改该缺省值（秒）：  
+> net.ipv4.tcp_fin_timeout = 30
+
+### 定时任务 **crontab**
+> crontab –e : 修改 crontab 文件.如果文件不存在会自动创建<br /> 
+> crontab –l : 显示 crontab 文件<br />
+> crontab -r : 删除 crontab 文件<br />
+> crontab -ir : 删除 crontab 文件前提醒用户
