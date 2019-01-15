@@ -84,6 +84,23 @@ set ruler // 在右下角显示光标所在的行数等信息
 set autoindent // 设置每次单击Enter键后，光标移动到下一行时与上一行的起始字符对齐
 syntax on // 即设置语法检测，当编辑C或者Shell脚本时，关键字会用特殊颜色显示
 ```
+- vim 命令
+    > 1. 删除包含something的所有行<br>
+    > :g/something/d <br />
+    > 2. 去除高亮 <br />
+    > :noh
+    > 3. 替换光标所在行的第一个匹配串<br />
+    > :s/old/new
+    > 4. 替换光标所在行的所有匹配串<br />
+    > :s/old/new/g
+    > 5. 替换指定行区间的匹配串，其中#,#代表的是替换操作的若干行中首尾两行的行号<br />
+    > :#,#s/old/new/g
+    > 6. 替换整个文件中每行的第一个匹配串<br />
+    > :%s/old/new
+    > 7. 替换整个文件中的每个匹配串<br />
+    > :%s/old/new/g
+    > 8. 会找到整个文件中的每个匹配串，并且对每个匹配串提示是否进行替换<br />
+    > :%s/old/new/gc
 - 安装python
     - 可利用linux自带下载工具wget下载，如下所示：wget http://www.python.org/ftp/python/3.3.0/Python-3.3.0.tgz
     - 解压 **tar -xzvf Python-3.3.0.tgz**
