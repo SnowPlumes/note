@@ -57,7 +57,7 @@
     > 捕获一个命令的输出，然后传递给另外一个命令
 - awk 打印
     > awk '{print $2}'   一行一行的读取指定的文件，以空格作为分隔符，打印第二个字段
-- 安装sz,rz
+- 安装sz,rz 
     - wget http://www.ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz
     - tar zxvf lrzsz-0.12.20.tar.gz && cd lrzsz-0.12.20
     - ./configure && make && make install
@@ -65,6 +65,7 @@
     - cd /usr/bin
     - ln -s /usr/local/bin/lrz rz
     - ln -s /usr/local/bin/lsz sz
+    - yum 安装 yum install lrzsz
 - 安装vim
     > yum -y install vim*
 
