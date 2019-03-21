@@ -26,14 +26,14 @@
     > 4. 常规字符串匹配类型
 
 ### try_file规则
-> try_files $uri $uri/ /index.html
-> 假设请求为http://www.me.com/test,则 **$uri** 为 `test`
+- try_files $uri $uri/ /index.html
+- 假设请求为http://www.me.com/test,则 **$uri** 为 `test`
     > 1. 查找 `/$root/test` 文件
     > 2. 查找 `/$root/test/` 目录
     > 3. 发起 `/index.html` 的内部子请求
 
 ### rewrite 规则
-> rewrite ^/images/(.*).(png|jpg|gif)$ /images?name=$1.$4 last;
+- rewrite ^/images/(.*).(png|jpg|gif)$ /images?name=$1.$4 last;
     > 1. last : 表示完成rewrite
     > 2. break: 停止执行当前虚拟主机的后续rewrite指令集
     > 3. redirect : 返回302临时重定向，地址栏会显示跳转后的地址
